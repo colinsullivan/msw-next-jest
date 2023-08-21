@@ -1,4 +1,16 @@
 module.exports = {
-    preset: 'ts-jest',
-    testEnvironment: "jsdom",
-};
+  transform: {
+    '^.+\\.(t|j)sx?$': '@swc/jest',
+  },
+  testEnvironment: 'jsdom',
+  testEnvironmentOptions: {
+    customExportConditions: [''],
+  },
+  globals: {
+    Request,
+    Response,
+    Headers,
+    FormData,
+    Blob,
+  },
+}
